@@ -1,0 +1,33 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Vendor Review Anomaly Checker</title>
+</head>
+<body>
+    <h2>Check If Review Is Anomalous</h2>
+    <form method="post">
+        <label>Rating (1-5):</label><br>
+        <input type="number" step="0.1" name="rating" required><br><br>
+
+        <label>Account Age (days):</label><br>
+        <input type="number" name="account_age" required><br><br>
+
+        <label>Hour (0-23):</label><br>
+        <input type="number" name="hour" required><br><br>
+
+        <label>Vendor ID:</label><br>
+        <select name="vendor_id">
+            <option value="vendor_1">vendor_1</option>
+            <option value="vendor_2">vendor_2</option>
+            <option value="vendor_3">vendor_3</option>
+        </select><br><br>
+
+        <input type="submit" value="Check Anomaly">
+    </form>
+
+    {% if prediction %}
+        <h3>Prediction: {{ prediction }}</h3>
+    {% endif %}
+</body>
+</html>
