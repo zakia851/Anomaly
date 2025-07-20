@@ -12,14 +12,16 @@ from datetime import datetime
 from sklearn.preprocessing import LabelEncoder
 
 # ---------- DB Connection ----------
+import os
+import mysql.connector
+
 db = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="cat123",
-    database="byte5"
+    host=os.getenv("DB_HOST"),
+    user=os.getenv("DB_USER"),
+    password=os.getenv("DB_PASSWORD"),
+    database=os.getenv("DB_NAME")
 )
 cursor = db.cursor()
-
 # ---------- Star Rating Map ----------
 star_map = {
     "1 ⭐": 1.0,
