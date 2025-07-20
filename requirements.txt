@@ -1,0 +1,13 @@
+pandas
+scikit-learn
+nltk
+numpy
+transformers
+torch
+joblib
+deep-translator
+langdetect
+better_profanity
+gradio
+mysql-connector-python
+tqdm
